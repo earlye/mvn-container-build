@@ -76,7 +76,7 @@ def main(argv):
     parser.add_argument('-pv','--pom-version',dest='version',default='0.0.1-SNAPSHOT',help='Version to put in the pom');
     parser.add_argument('-x','--excludes',dest='excludes',nargs='+',default=[],help='Directories to exclude');
     parser.add_argument('-f','--file',dest='file',default='.pom.xml',help='Name of pom file');
-    parser.add_argument('-m','--mvn-args',dest='mvn_args',nargs='+',action='append',help='Name of pom file');
+    parser.add_argument('mvn_args',metavar='M',nargs='*',action='append',help='Arguments for maven. Prepend with " -- " if you have any maven arguments starting with "-", or just make a habit of doing so. Example: mvn-container-build -- clean install');
     args = vars(parser.parse_args(argv))
 
     # interpret parsed args
